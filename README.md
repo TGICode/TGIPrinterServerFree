@@ -8,7 +8,7 @@ El programa es una aplicación que se instalará en el área de notificación o 
 
 El primer paso consistirá en descargar el servidor y copiarlo en nuestro ordenador (aún no hemos implementado un instalador).
 
-Una vez copiado deberemos ejecutarlo. La app aparecerá en la bandeja del sistema. Haciendo doble click sobre él se abrirá la UI del mismo y podremos configurar las impresoras, el puerto de escucha y si deseamos que se ejecute automáticamente al entrar en Windows.
+Una vez copiado deberemos ejecutarlo. La app aparecerá en la bandeja del sistema. Haciendo doble click sobre el icono se abrirá la UI del programa y podremos configurar las impresoras, el puerto de escucha y si deseamos que se ejecute automáticamente al entrar en Windows.
 
 Se podrá configurar una impresora por defecto y tantas impresoras como se desee y que estén presentes en el sistema. A cada impresora se le asociará un alias por el que será identificada en nuestra app web.
 
@@ -24,7 +24,7 @@ Cuando nuestro servidor esté configurado y en ejecución, ya podremos enviar co
         command: "getPrintersList"
       }
 
-        fetch('http://127.0.0.1:7500', {
+      fetch('http://127.0.0.1:7500', {
         method: "POST",
         body: encodeURI(JSON.stringify(Tarea))
       })
@@ -90,9 +90,11 @@ Enviar(){
     }
   })
 }
+```
 
 ## Ejemplo 2. Impresión de un texto y una línea
 ### Javascript
+```
 function Enviar(){
   Tarea = {
           command: "printJob",
@@ -101,7 +103,7 @@ function Enviar(){
             "commands": [
               {
                 command: "setFont",
-                name: "Text New Roman",
+                name: "Times New Roman",
                 height: 3,
                 color: "FF0000",
                 bold: true
