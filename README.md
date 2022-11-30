@@ -139,3 +139,6 @@ function Enviar(){
   .catch(err => console.log(err));
 }
 ```
+
+Puede descargar la lista de comandos para la versión free en el link siguiente
+[Especificaciones del servidor de impresión TGIPrinterServer (Free).pdf](https://github.com/TGICode/TGIPrinterServerFree/files/10123190/Especificaciones.del.servidor.de.impresion.TGIPrinterServer.Free.pdf)
