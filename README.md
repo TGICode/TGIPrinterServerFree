@@ -16,6 +16,7 @@ Cuando nuestro servidor esté configurado y en ejecución, ya podremos enviar co
 
 ## Ejemplo 1. Recuperar lista de impresoras
 ### Javascript
+```
 <html>
   <script type="text/javascript">
     function Enviar(){
@@ -36,8 +37,10 @@ Cuando nuestro servidor esté configurado y en ejecución, ya podremos enviar co
   <button onclick="Enviar()"> Prueba javascript</button>
 </body>
 </html>
+```
 
 ### jQuery
+```
 <html>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script type="text/javascript">
@@ -63,29 +66,29 @@ Cuando nuestro servidor esté configurado y en ejecución, ya podremos enviar co
   <button onclick="Enviar()"> Prueba javascript</button>
 </body>
 </html>
+```
 
 ### Angular
+```
 Enviar(){
   let Tarea = {
     command: "getPrintersList"
   }
 
   this._http.post('http://127.0.0.1:7500', encodeURI(JSON.stringify(Tarea)))
-.subscribe(
-{
-next:  (data:any) => {
-if(data.res != 'OK'){
-alert("Error en los datos");
-}
-console.log(data);
-},
-error: (error: HttpErrorResponse) =>{
-alert("Ha ocurrido un error al comunicar con el servidor de impresión");
-console.log(error)
-return null;
-}
-}
-)
+  .subscribe({
+    next:  (data:any) => {
+      if(data.res != 'OK'){
+        alert("Error en los datos");
+      }
+      console.log(data);
+    },
+    error: (error: HttpErrorResponse) =>{
+      alert("Ha ocurrido un error al comunicar con el servidor de impresión");
+      console.log(error)
+      return null;
+    }
+  })
 }
 
 ## Ejemplo 2. Impresión de un texto y una línea
@@ -135,3 +138,4 @@ function Enviar(){
   .then(json => console.log(json))
   .catch(err => console.log(err));
 }
+```
