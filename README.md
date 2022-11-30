@@ -17,59 +17,60 @@ Cuando nuestro servidor esté configurado y en ejecución, ya podremos enviar co
 ## Ejemplo 1. Recuperar lista de impresoras
 ### Javascript
 <html>
-	<script type="text/javascript">
-		function Enviar(){
-			let Tarea = {
-				command: "getPrintersList"
-			}
+  <script type="text/javascript">
+    function Enviar(){
+      let Tarea = {
+        command: "getPrintersList"
+      }
 
-		    fetch('http://127.0.0.1:7500', {
-				method: "POST",
-				body: encodeURI(JSON.stringify(Tarea))
-			})
-			.then(response => response.json()) 
-			.then(json => console.log(json))
-			.catch(err => console.log(err));
-		}
-	</script>
+        fetch('http://127.0.0.1:7500', {
+        method: "POST",
+        body: encodeURI(JSON.stringify(Tarea))
+      })
+      .then(response => response.json()) 
+      .then(json => console.log(json))
+      .catch(err => console.log(err));
+    }
+  </script>
 <body>
-	<button onclick="Enviar()"> Prueba javascript</button>
+  <button onclick="Enviar()"> Prueba javascript</button>
 </body>
 </html>
+
 ### jQuery
 <html>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		function Enviar(){
-			let Tarea = {
-				command: "getPrintersList"
-			}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    function Enviar(){
+      let Tarea = {
+        command: "getPrintersList"
+      }
 
-		    $.ajax({
-		        url: "http://127.0.0.1:7500",
-		        method: "POST",
-		        data: encodeURI(JSON.stringify(Tarea)),
-		        success: function (result) {
-		          console.log(JSON.parse(result));
-		        },
-		        error: function(jqXHR, textStatus, errorThrown) {
-		           console.log(textStatus, errorThrown);
-		        }
-      		});
-		}
-	</script>
+        $.ajax({
+            url: "http://127.0.0.1:7500",
+            method: "POST",
+            data: encodeURI(JSON.stringify(Tarea)),
+            success: function (result) {
+              console.log(JSON.parse(result));
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+               console.log(textStatus, errorThrown);
+            }
+          });
+    }
+  </script>
 <body>
-	<button onclick="Enviar()"> Prueba javascript</button>
+  <button onclick="Enviar()"> Prueba javascript</button>
 </body>
 </html>
 
 ### Angular
 Enviar(){
-	let Tarea = {
-		command: "getPrintersList"
-	}
+  let Tarea = {
+    command: "getPrintersList"
+  }
 
-	this._http.post('http://127.0.0.1:7500', encodeURI(JSON.stringify(Tarea)))
+  this._http.post('http://127.0.0.1:7500', encodeURI(JSON.stringify(Tarea)))
 .subscribe(
 {
 next:  (data:any) => {
@@ -90,7 +91,7 @@ return null;
 ## Ejemplo 2. Impresión de un texto y una línea
 ### Javascript
 function Enviar(){
-	Tarea = {
+  Tarea = {
           command: "printJob",
           data: {
             "name":"Trabajo de impresión",
@@ -127,10 +128,10 @@ function Enviar(){
           }
         }
     fetch('http://127.0.0.1:7500', {
-		method: "POST",
-		body: encodeURI(JSON.stringify(Tarea))
-	})
-	.then(response => response.json()) 
-	.then(json => console.log(json))
-	.catch(err => console.log(err));
+    method: "POST",
+    body: encodeURI(JSON.stringify(Tarea))
+  })
+  .then(response => response.json()) 
+  .then(json => console.log(json))
+  .catch(err => console.log(err));
 }
