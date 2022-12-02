@@ -144,3 +144,23 @@ function Enviar(){
 
 Puede descargar la lista de comandos para la versión free en el link siguiente
 [Especificaciones del servidor de impresión TGIPrinterServer (Free).pdf](https://github.com/TGICode/TGIPrinterServerFree/files/10123190/Especificaciones.del.servidor.de.impresion.TGIPrinterServer.Free.pdf)
+
+## VersiónPro
+En la versión Pro (aún estamos pensando cómo comercializarla, aunque seguramente será como licencias por puesto), pretendemos incluir las sigueintes funciones:
+
+* writeAlignedText
+* ellipse
+* line
+* rectangle
+* roundedRectangle
+* SetBrush
+* arcAngle
+* arc
+* chord
+* drawImage
+* stretchImage
+* fillRect
+* pie
+* poliline
+* drawClippedText 
+
